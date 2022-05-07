@@ -1,0 +1,135 @@
+.updateProgram{
+    flex:4 ;
+    padding: 20px;
+}
+.updateProgramTitleContainer
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.updateProgramContainer {
+    display: flex;
+    margin-top: 20px;
+}
+.programDetailsTitle {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.uploadIncentiveTitle {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.updateProgramForm {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.updateIncentiveForm {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.programUpdateItem{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.updateIncentiveItem{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.updateProgramDetails {
+    flex: 1;
+    padding: 20px;
+    -webkit-box-shadow: 1px 1px 15px -1px #FFC520;
+    box-shadow: 1px 1px 15px -1px #FFC520;
+    border: solid 2px;
+    height:500px
+}
+
+.updateProgramLeft{
+    font-size: 20px;
+}
+.updateIncentiveContainer {
+    flex:1;
+    padding: 20px;
+    height: 500px;
+    -webkit-box-shadow: 0px 0px 11px -1px #FFC520;
+    box-shadow: 0px 0px 11px -1px #FFC520;
+    margin-left: 20px;
+    border: solid 2px;
+}
+
+.programUpdateItem>label{
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.updateIncentiveItem>label{
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.programUpdateInput{
+    border: none;
+    width: 250px;
+    height: 30px;
+    border-bottom: 1px solid grey;
+}
+
+.incentiveUpload{
+    display: flex;
+    cursor: pointer;
+}
+.incentiveUpload>label{
+    font-size: 20px;
+}
+.programUpdateCheckBox {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    position: relative;
+
+}
+.programUpdateButton {
+    border: none;
+    margin-top: 150px;
+    margin-left: -20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    width:300px;
+    height: 50px;
+    background-color: orange;
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+}
+.uploadIncentiveIcon{
+    border: solid;
+    margin-left: 10px;
+}
+
+.programCriteria>label {
+    font-size: 20px;
+}
+
+.programCriteria {
+    margin-top: 20px;
+    border-style: solid;
+    border-collapse: separate;
+    border-color: black;
+    border-radius: 10px;
+    border-spacing: 10px;
+}
+
