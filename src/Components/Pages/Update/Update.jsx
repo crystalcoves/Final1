@@ -1,94 +1,130 @@
 import React from 'react';
 import './Update.css';
-import PublishIcon from "@mui/icons-material/Publish";
-export default function Update()
+import {FileUpload} from "react-ipfs-uploader";
+import {useState} from "react";
+import Web3 from 'web3';
+import { callmintfunction } from '../../../App.js';
+
+
+
+const Update=()=>
 {
+    const [fileUrl, setFileUrl] = useState('')
+    async function checkData() {
+
+        var answer1 = String(document.getElementById("question1").value);
+        var answer2 = String(document.getElementById("question2").value);
+        var answer3 = String(document.getElementById("question3").value);
+
+        if(answer1=="4", answer2=="cats", answer3=="20")
+        {
+            {callmintfunction() };
+        }
+        console.log(answer1);
+        console.log(answer2);
+        console.log(answer3);
+
+    }
+
     return(
         <div className={"updateProgram"}>
             <div className={"updateProgramTitleContainer"}>
                 <h1 className={"programTitle"}>Update Incentive Program</h1>
             </div>
             <div className={"updateProgramContainer"}>
-              <div className={"updateProgramDetails"}>
-                <span className={"programDetailsTitle"}>Incentive Program Details</span>
-                <form className={"updateProgramForm"}>
-                    <div className={"updateProgramLeft"}>
-                        <div className={"programUpdateItem"}>
-                                <label>Incentive Program Name</label>
+                <div className={"updateProgramDetails"}>
+                <span className={"uploadProgramTitle"}>Update Incentive Program Progress</span>
+                <div className={"programBottom"}>
+                    <form className={"updateIncentiveForm"}>
+                        <div className={"uploadIncentiveLeft"}>
+                            <div className={"updateIncentiveItem"}>
+                                <label>What is 2+2?</label>
                                 <input type="text"
                                        required
-                                       placeholder={"Name"}
-                                       className={"programUpdateInput"}/>
+                                       placeholder={"Write your answer here"}
+                                       className={"programUpdateInput"}
+                                       id= "question1"
+                                       // value={values.question1}
+                                       // onChange={handleChange1("question1")}
+                                       // margin="normal"
+                                       // error={error1}
+                                />
+                            </div>
+                            <div className={"updateIncentiveItem"}>
+                                <label>What is the opposite of dogs?</label>
+                                <input type="text"
+                                       required
+                                       placeholder={"Write your answer here"}
+                                       className={"programUpdateInput"}
+                                       id= "question2"
+                                       // value={values.question2}
+                                       // onChange={handleChange2("question2")}
+                                       // margin="normal"
+                                       // error={error2}
+                                />
+                            </div>
+                            <div className={"updateIncentiveItem"}>
+                                <label>What is 10+10?</label>
+                                <input type="text" required
+                                       placeholder={"Write your answer here"}
+                                       className={"programUpdateInput"}
+                                       id= "question3"
+                                       // value={values.question3}
+                                       // onChange={handleChange3("question3")}
+                                       // margin="normal"
+                                       // error={error3}
+                                />
+                            </div>
                         </div>
-                        <div className={"programUpdateItem"}>
-                            <label>Incentive Program Description</label>
-                            <input type="text"
-                                   required
-                                   placeholder={"This is an incentive program"}
-                                   className={"programUpdateInput"}/>
-                        </div>
-                        <label>Criteria</label>
-                        <div className={"programCriteria"}>
-                        <div className={"programUpdateCheckBox"}>
-                            <input type="checkbox" required id={"cb1"} className={"programUpdateInput"}/>
-                            <label htmlFor="cb1">Tasks Completed</label>
-                        </div>
-                        <div className={"programUpdateCheckBox"}>
-                            <input type="checkbox" required id={"cb2"} className={"programUpdateInput"}/>
-                            <label htmlFor="cb2">Health & Fitness</label>
-                        </div>
-                        <div className={"programUpdateCheckBox"}>
-                            <input type="checkbox" required id={"cb3"} className={"programUpdateInput"}/>
-                            <label htmlFor="cb3">Work Ethic</label>
-                        </div>
-                        <div className={"programUpdateCheckBox"}>
-                            <input type="checkbox" required id={"cb4"} className={"programUpdateInput"}/>
-                            <label htmlFor="cb4">Coffee Power</label>
-                        </div>
-                    </div>
-                        <button className={"programUpdateButton"}>Update</button>
-                    </div>
-                </form>
-            </div>
+                        <button className={"programUpdateButton"} type ="button"onClick={checkData}>Update</button>
+                    </form>
+                </div>
+                </div>
                 <div className={"updateIncentiveContainer"}>
-                    <span className={"uploadIncentiveTitle"}>Incentive Details</span>
+                    <span className={"uploadIncentiveTitle"}>Upload Incentive</span>
                     <div className={"incentiveBottom"}>
-                        <form className={"updateIncentiveForm"}>
+                        <form className={"addIncentiveForm"}>
                             <div className={"uploadIncentiveLeft"}>
-                                <div className={"updateIncentiveItem"}>
+                                <div className={"addIncentiveItem"}>
                                     <label>Incentive Name</label>
-                                    <input type="text"
+                                    <input type="text" id="textName"
                                            required
                                            placeholder={"Name"}
                                            className={"programUpdateInput"}/>
                                 </div>
-                                <div className={"updateIncentiveItem"}>
+                                <div className={"addIncentiveItem"}>
                                     <label>Incentive Description</label>
-                                    <input type="text"
+                                    <input type="text" id="textDescription"
                                            required
                                            placeholder={"This is an incentive program"}
                                            className={"programUpdateInput"}/>
                                 </div>
-                                <div className={"updateIncentiveItem"}>
+                                <div className={"addIncentiveItem"}>
                                     <label>URI</label>
                                     <input type="text" required
-                                           placeholder={""}
+                                           placeholder={"URI address"}
                                            className={"programUpdateInput"}/>
                                 </div>
                             </div>
-                        </form>
-                        <div className={"updateIncentiveRight"}>
                             <div className={"incentiveUpload"}>
                                 <label>Upload Image</label>
-                                <label htmlFor={"file"}><PublishIcon className={"uploadIncentiveIcon"}/></label>
-                                <input type={"file"} required
-                                       id={"file"}
-                                       style={{display: "none"}}/>
+                                <div className={"fileUpload"}>
+                                    <FileUpload setUrl={setFileUrl} />
+                                    FileUrl: <a
+                                    href={fileUrl}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                >
+                                    {fileUrl}
+                                </a>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
+
+export default Update

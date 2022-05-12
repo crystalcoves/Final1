@@ -23,20 +23,18 @@ export default function UserList()
         {
             field: 'description',
             headerName: 'Description',
-            width: 840,
+            width: 950,
         },
         {
             field: "action",
             headerName: "Options",
-            width: 300,
+            width: 100,
             renderCell: (params)=>{
                 return(
                     <div>
-                        <button className={"userRegister"}>Register</button>
-                        <Link to= {"/update/" + params.row.id}>
+                        <Link to= {"/updateincentiveprogram/" + params.row.id}>
                             <button className={"userUpdate"}>Update</button>
                         </Link>
-                        <button className="userDelete" onClick = {()=>handleDelete(params.row.id)}>Deregister</button>
                         </div>
                 )
             }
@@ -60,10 +58,10 @@ export default function UserList()
 
                     boxShadow: 2,
                     border: 2,
-                    borderColor: 'black',
+                    borderColor: 'orange',
                     '& .MuiDataGrid-cell:hover': {
                         color: 'orange',
-                    },
+                    },backgroundColor: 'cornsilk',
                 }}
             />
         </div>

@@ -1,7 +1,7 @@
 
 .userList{
     flex: 4;
-    margin: 15px 15px;
+    margin: 1% 1%;
     -webkit-box-shadow: 0px 0px 11px -1px #FFC520;
     box-shadow: 0px 0px 20px -1px #FFC520;
 }
@@ -11,40 +11,39 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-bottom: 32px;
+    margin-top: 1%;
+    margin-left: 2%;
 }
 
 .viewUsersTable {
-    max-height: 690px;
-    margin: 15px 15px;
+    max-height: 680px;
+    margin: 1% 1%;
     min-width: 600px;
 }
 
 .userRegister{
     border: none;
     border-radius: 10px;
-    padding: 5px 10px;
+    padding: 8% 20%;
     background-color: orange;
     cursor: pointer;
-    margin-right: 20px;
+    margin-right: 25px;
 }
 .userUpdate{
     border: none;
     border-radius: 10px;
-    padding: 5px 10px;
+    padding: 8% 20%;
     background-color: orange;
     cursor: pointer;
-    margin-right: 20px;
+    margin-right: 25px;
 }
 .userDelete{
     border: none;
     border-radius: 10px;
-    padding: 5px 10px;
+    padding: 8% 20%;
     background-color: orange;
     cursor: pointer;
-    margin-right: 20px;
+    margin-right: 25px;
 
 }
 
