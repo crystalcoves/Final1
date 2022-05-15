@@ -1,14 +1,18 @@
 import Topbar from "./Components/topbar/Topbar";
 import Sidebar from "./Components/Sidebar/sidebar";
 import "./App.css";
+import Update from './Components/Pages/Update/Update';
 import ProgramList from "./Components/Pages/programList/programList.jsx";
+import UserList from './Components/Pages/userList/userList';
 import NewProgram from'./Components/Pages/NewProgram/NewProgram'
 import ViewProgram from'./Components/Pages/ViewProgram/ViewProgram'
-import UserList from './Components/Pages/userList/userList.jsx';
-import Update from './Components/Pages/Update/Update'
-import React, {useState} from "react";
+import Update2 from './Components/Pages/Update2/Update'
+import React, { useState } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { FileUpload } from 'react-ipfs-uploader';
 import Web3 from 'web3';
-import { BrowserRouter, Switch, Route} from "react-router-dom";
+
+
 
 //Creating a new instance of Web3
 const web3 = new Web3(window.ethereum);
@@ -20,40 +24,44 @@ const contractAddress = "0x0ecfec322aA38C5c78d8458648837252C75fDb7D";
 //Instantiating the smart contract in order to make use of all of its functions
 const contract = new web3.eth.Contract(contractABI, contractAddress);
 
+
 export async function callmintfunction() {
     const result = await contract.methods.safeMint("0x61d24Cb0D608Fc3d925950acBf895a454f922932", "https://ipfs.io/ipfs/QmVxRsuNDZXSP8SqUNN7yjEJEf7XXVwiTsKFNJou95wSEK?filename=truly.json").send({ from: "0x61d24Cb0D608Fc3d925950acBf895a454f922932" });
     console.log(result);
     return result;
 }
-const App=()=> {
-  return (
-    <BrowserRouter>
-      <Topbar />
- <div className="appContainer">
-     <Sidebar />
-     <Switch>
-         <Route exact path ="/">
-     <ProgramList />
-         </Route>
-         <Route path ="/incentiveprograms">
-             <ProgramList />
-         </Route>
-         <Route exact path ="/incentiveprogram/:programId">
-             <ViewProgram />
-         </Route>
-         <Route exact path ="/newProgram" >
-             <NewProgram/>
-         </Route>
-         <Route exact path ="/employeeprograms" >
-             <UserList/>
-         </Route>
-         <Route exact path ="/updateincentiveprogram/:userId" >
-             <Update/>
-         </Route>
-     </Switch>
- </div>
-    </BrowserRouter>
-  );
+
+const App = () => {
+    return (
+        <BrowserRouter>
+            <Topbar />
+            <div className="appContainer">
+                <Sidebar />
+                <Switch>
+                    <Route path ="/incentiveprograms">
+                        <ProgramList />
+                    </Route>
+                    <Route exact path ="/incentiveprogram/:programId">
+                        <ViewProgram />
+                    </Route>
+                    <Route exact path ="/newProgram" >
+                        <NewProgram/>
+                    </Route>
+                    <Route exact path ="/employeeprograms" >
+                        <UserList/>
+                    </Route>
+                    <Route exact path ="/updateincentiveprogram/1" >
+                        <Update/>
+                    </Route>
+                    <Route exact path ="/updateincentiveprogram/2" >
+                        <Update2/>
+                    </Route>
+                </Switch>
+
+            </div>
+
+        </BrowserRouter>
+    );
 }
 
 export default App;

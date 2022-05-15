@@ -33,7 +33,7 @@ export default function UserList()
                 return(
                     <div>
                         <Link to= {"/updateincentiveprogram/" + params.row.id}>
-                            <button className={"userUpdate"}>Update</button>
+                            <button className={"userUpdate"}>Select</button>
                         </Link>
                         </div>
                 )

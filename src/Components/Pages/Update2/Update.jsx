@@ -38,7 +38,7 @@ const Update = () => {
         var answer1 = String(document.getElementById("question1").value);
         var answer2 = String(document.getElementById("question2").value);
         var answer3 = String(document.getElementById("question3").value);
-        if (answer1 == "2008", answer2 == "11", answer3 == "7") {
+        if (answer1 == "Blockchain", answer2 == "2014", answer3 == "Ethereum") {
             { callmintfunction() };
         }
         console.log(answer1);
@@ -57,7 +57,7 @@ const Update = () => {
                         <form className={"updateIncentiveForm"}>
                             <div className={"uploadIncentiveLeft"}>
                                 <div className={"updateIncentiveItem"}>
-                                    <label>What year was Impact founded?</label>
+                                    <label>What technology does NFTs use?</label>
                                     <input type="text"
                                            required
                                            placeholder={"Write your answer here"}
@@ -70,7 +70,7 @@ const Update = () => {
                                     />
                                 </div>
                                 <div className={"updateIncentiveItem"}>
-                                    <label>What is the opposite of dogs?</label>
+                                    <label>When was the first NFT minted?</label>
                                     <input type="text"
                                            required
                                            placeholder={"Write your answer here"}
@@ -83,7 +83,7 @@ const Update = () => {
                                     />
                                 </div>
                                 <div className={"updateIncentiveItem"}>
-                                    <label>What is 10+10?</label>
+                                    <label>Which network does Impact NFTs use?</label>
                                     <input type="text" required
                                            placeholder={"Write your answer here"}
                                            className={"programUpdateInput"}
